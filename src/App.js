@@ -1,10 +1,19 @@
-import TodoList from './components/TodoList';
+import Todo from './components/to';
+import styled from 'styled-components'
+import GlobalFonts from './fontStyles'
+
+const Wrapper= styled.section`
+  padding: 8vw 20vw;
+  background:#F6ADC6;
+  font-family:'メイリオ', 'Meiryo', sans-serif;
+`;
 
 function App() {
   return (
-    <div style={{ margin: "2em"}}>
-      <TodoList/>
-    </div>
+    <Wrapper>
+      <GlobalFonts />
+      <Todo />
+    </Wrapper>
   );
 }
 

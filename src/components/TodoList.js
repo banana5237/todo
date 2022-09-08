@@ -1,34 +1,66 @@
-import { useState } from 'react';
+import React from 'react';
+import styled from 'styled-components'
 
-const TodoList = () => {
+const Wrapper= styled.section`
+  color:#333333;
+  font-size:2vw;
+  background:#FFFEF6;
+  padding:2vw;
+  margin:2vw 0;
+  box-shadow: 0 10px 5px 0 rgba(0, 0, 0, .5);
+`;
 
-    const initialState = [
-        {
-            task: 'Learn vue.js',
-            isCompleted: false
-        },
-        {
-            task: 'Learn React Hook',
-            isCompleted: false
-        },
-        {
-            task: 'Learn Gatsby.js',
-            isCompleted: false
-        },     
-    ]
+const Delete= styled.section`
+  margin: 0 2vw;
+  font-weight:700;
+`;
 
-    const [todos, setTodos] = useState(initialState);
+const Body= styled.section`
+  display: flex;
+`;
 
-    return (
-        <div>
-            <h1>ToDo List</h1>
-            <ul>
-                { todos.map((todo, index) => (
-                <li key={ index }>{ todo.task }</li>
-            ))}
-    </ul>
-        </div>
+const TodoList = ({ todos, setTodos }) => {
+  const handleRemoveTask = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
+  const handleUpdateTask = (index) => {
+    const newTodos = todos.map((todo, todoIndex) => {
+      if (todoIndex === index) {
+        todo.isCompleted = !todo.isCompleted;
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
+
+  return (
+    <Wrapper>
+      {todos.map((todo, index) => (
+        <Body
+          key={index}
+          style={{
+            textDecoration: todo.isCompleted ? 'line-through' : 'none',
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={todo.isCompleted}
+            onChange={() => handleUpdateTask(index)}
+          />
+          {todo.task}
+          <Delete
+            onClick={() => handleRemoveTask(index)}
+            style={{ cursor: 'pointer' }}
+          >
+            ×
+          </Delete>
+        </Body>
+      ))}
+    </Wrapper>
   );
-}
+};
 
 export default TodoList;
