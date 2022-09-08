@@ -2,13 +2,17 @@ import { useState } from 'react';
 import styled from 'styled-components'
 
 const Wrapper= styled.section`
-  font-size:3vw;
+  font-size:2vw;
   padding:2vw;
   margin:3vw 0;
-  background:#FFFEF6;
+  display: flex;
+  background:#F4FBFE;
   box-shadow: 0 10px 5px 0 rgba(0, 0, 0, .5);
-  font-weight:400
 `;
+
+const Add = styled.section`
+  // font-size:3vw;
+`
 
 const AddTodo = ({ setTodos }) => {
   const [task, setTask] = useState('');
@@ -28,7 +32,11 @@ const AddTodo = ({ setTodos }) => {
     <Wrapper>
     <form onSubmit={handleSubmit}>
       Add Task :
-      <input value={task} placeholder="Add New Task" onChange={handleNewTask} />
+      <Add>
+        <input value={task} 
+        placeholder="Add New Task" 
+        onChange={handleNewTask} />
+      </Add>
     </form>
     </Wrapper>
   );

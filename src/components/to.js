@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const Title= styled.section`
     color:#333333;
     font-size:5vw;
-    background:#FFFEF6;
+    background:#F4FBFE;
     padding:2vw;
     margin:2vw 0;
     text-align: center;

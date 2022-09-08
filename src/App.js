@@ -4,7 +4,7 @@ import GlobalFonts from './fontStyles'
 
 const Wrapper= styled.section`
   padding: 8vw 20vw;
-  background:#F6ADC6;
+  background:#ADE0EE;
   font-family:'メイリオ', 'Meiryo', sans-serif;
 `;
 

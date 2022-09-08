@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper= styled.section`
   color:#333333;
   font-size:2vw;
-  background:#FFFEF6;
+  background:#F4FBFE;
   padding:2vw;
   margin:2vw 0;
   box-shadow: 0 10px 5px 0 rgba(0, 0, 0, .5);
