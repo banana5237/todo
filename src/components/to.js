@@ -4,14 +4,14 @@ import TodoList from './TodoList';
 import styled from 'styled-components'
 
 const Title= styled.section`
-    color:#333333;
-    font-size:5vw;
+    // color:#333333;
+    // font-size:5vw;
     background:#F4FBFE;
     padding:2vw;
     margin:2vw 0;
-    text-align: center;
+    // text-align: center;
     box-shadow: 0 10px 5px 0 rgba(0, 0, 0, .5);
-    font-weight:700
+    // font-weight:700
   `;
 
 const Todo = () => {
@@ -21,7 +21,10 @@ const Todo = () => {
 
   return (
     <div>
-      <Title>Todo List</Title>
+      <Title>
+      <img width="100%" height="auto" alt="Title" src="/title.png" />
+      </Title>
+      {/* <Title>Todo List</Title> */}
       <AddTodo setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
     </div>

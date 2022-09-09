@@ -10,7 +10,7 @@ const Wrapper= styled.section`
   box-shadow: 0 10px 5px 0 rgba(0, 0, 0, .5);
 `;
 
-const Add = styled.section`
+const Add = styled.div`
   // font-size:3vw;
 `
 
@@ -31,10 +31,10 @@ const AddTodo = ({ setTodos }) => {
   return (
     <Wrapper>
     <form onSubmit={handleSubmit}>
-      Add Task :
+      タスクを追加 :
       <Add>
         <input value={task} 
-        placeholder="Add New Task" 
+        placeholder="タスクを入力" 
         onChange={handleNewTask} />
       </Add>
     </form>
