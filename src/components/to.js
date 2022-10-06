@@ -25,8 +25,8 @@ const Todo = () => {
       <img width="100%" height="auto" alt="Title" src="/title.png" />
       </Title>
       {/* <Title>Todo List</Title> */}
-      <AddTodo setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
+      <AddTodo setTodos={setTodos} />
     </div>
   );
 };
